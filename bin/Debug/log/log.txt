@@ -1,0 +1,48 @@
+2016-11-08 13:55:17,104 [9] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 13:55:18,443 [9] ERROR Crawler.HttpHelper - DownloadHtml抓取http://www.mafengwo.cn/yj/10065/1-0-1.html出现异常
+System.ArgumentException: 必须使用适当的属性或方法修改“Referer”标头。
+参数名: name
+   在 System.Net.WebHeaderCollection.ThrowOnRestrictedHeader(String headerName)
+   在 System.Net.WebHeaderCollection.Add(String name, String value)
+   在 Crawler.HttpHelper.DownloadHtml(String url, Encoding encode) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\Utility\HttpHelper.cs:行号 59
+2016-11-08 13:55:48,259 [9] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 13:56:26,496 [10] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:12:54,843 [10] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:13:21,870 [10] ERROR Crawler.DataService.DBInit - 初始化数据库InitCategoryTable失败
+System.Data.SqlClient.SqlException (0x80131904): 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Crawler.DataService.SqlHelper.ExecuteNonQuery(String sql) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\DataService\SqlHelper.cs:行号 26
+   在 Crawler.DataService.DBInit.InitCategoryTable() 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\DataService\DBInit.cs:行号 138
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2016-11-08 17:16:06,900 [9] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:16:11,730 [9] WARN  Crawler.DataService.DBInit - 初始化数据库InitCategoryTable删除的时候，原表不存在
+2016-11-08 17:21:06,223 [8] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:21:57,260 [10] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:22:17,289 [10] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:25:01,200 [9] INFO  Crawler.Logger - 系统初始化Logger模块
+2016-11-08 17:26:33,832 [9] ERROR Crawler.Model.TravelNotesList - CrawlerMuti出现异常
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Crawler.TravelNodesSearch.Crawler(String url) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\TravelNodesSearch.cs:行号 25
+2016-11-08 17:26:44,717 [9] ERROR Crawler.Program - 异常啦，
+System.InvalidOperationException: ExecuteNonQuery: CommandText 属性尚未初始化
+   在 System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Crawler.DataService.SqlHelper.ExecuteNonQuery(String sql) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\DataService\SqlHelper.cs:行号 28
+   在 Crawler.DataService.SqlHelper.InsertList[T](List`1 list, String tableName) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\DataService\SqlHelper.cs:行号 77
+   在 Crawler.DataService.TravelNodesListRepository.Save(List`1 TravelNotesListList) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\DataService\TravelNodesListRepository.cs:行号 18
+   在 Crawler.Program.Main(String[] args) 位置 D:\baiduyundownload\V6\20160720Advanced6Course13Crawler\Crawler\Program.cs:行号 68
+2016-11-08 17:37:10,144 [8] INFO  Crawler.Logger - 系统初始化Logger模块
